@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Complete Digital Solutions & Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Questrial&family=Montserrat:wght@300;400;600;700&display=swap');
+:root {
+    --primary-color: #ff6b35;
+    --secondary-color: #f7931e;
+    --accent-color: #ffd23f;
+    --dark-bg: #1a1a1a;
+    --light-bg: #fafafa;
+    --text-dark: #2c2c2c;
+    --text-light: #ffffff;
+    --transition: all 0.3s ease;
+    --warm-overlay: rgba(255, 107, 53, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+}
+
+body {
+    background: linear-gradient(-45deg, #1a0a0a, #1a1a1a, #2d1e16, #ff6b35);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(15px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.nav-links a:hover {
+    background: var(--warm-overlay);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 0;
+    color: var(--text-light);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    color: var(--accent-color);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.2s forwards;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.4s forwards;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Services Section */
+.services-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
+    margin-top: 2rem;
+    border-radius: 30px 30px 0 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.2);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.service-features li {
+    padding: 0.3rem 0;
+    color: #555;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.service-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Process Section */
+.process-section {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    padding: 5rem 0;
+    color: white;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.process-step {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.process-number {
+    width: 60px;
+    height: 60px;
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.process-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Portfolio Preview */
+.portfolio-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    background: #f8f9fa;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+}
+
+.portfolio-image {
+    height: 200px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+}
+
+.portfolio-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.portfolio-item p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.portfolio-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid var(--accent-color);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">Designers.io</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>What We Do</h1>
+            <p>We create exceptional digital experiences that drive business growth through innovative design, cutting-edge technology, and strategic thinking.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>Web Design & Development</h3>
+                    <p>Create stunning, responsive websites that captivate your audience and deliver exceptional user experiences across all devices.</p>
+                    <ul class="service-features">
+                        <li>Custom responsive design</li>
+                        <li>Modern UI/UX principles</li>
+                        <li>Performance optimization</li>
+                        <li>SEO-friendly structure</li>
+                        <li>CMS integration</li>
+                    </ul>
+                    <div class="service-price">Starting at $2,500</div>
+                    <button class="service-btn" onclick="contactUs('Web Design')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏷️</div>
+                    <h3>Brand Identity & Logo Design</h3>
+                    <p>Develop a compelling brand identity that resonates with your target audience and sets you apart from the competition.</p>
+                    <ul class="service-features">
+                        <li>Logo design & variations</li>
+                        <li>Brand guidelines</li>
+                        <li>Color palette & typography</li>
+                        <li>Business card design</li>
+                        <li>Brand strategy consulting</li>
+                    </ul>
+                    <div class="service-price">Starting at $1,200</div>
+                    <button class="service-btn" onclick="contactUs('Branding')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Build powerful mobile applications for iOS and Android that provide seamless user experiences and drive engagement.</p>
+                    <ul class="service-features">
+                        <li>Native & cross-platform apps</li>
+                        <li>UI/UX design</li>
+                        <li>Backend integration</li>
+                        <li>App store optimization</li>
+                        <li>Maintenance & updates</li>
+                    </ul>
+                    <div class="service-price">Starting at $8,000</div>
+                    <button class="service-btn" onclick="contactUs('Mobile App')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Launch and scale your online store with custom e-commerce platforms designed to maximize conversions and sales.</p>
+                    <ul class="service-features">
+                        <li>Custom shopping cart design</li>
+                        <li>Payment gateway integration</li>
+                        <li>Inventory management</li>
+                        <li>Order tracking system</li>
+                        <li>Analytics & reporting</li>
+                    </ul>
+                    <div class="service-price">Starting at $4,500</div>
+                    <button class="service-btn" onclick="contactUs('E-Commerce')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📊</div>
+                    <h3>Digital Marketing & SEO</h3>
+                    <p>Boost your online visibility and drive qualified traffic with comprehensive digital marketing strategies and SEO optimization.</p>
+                    <ul class="service-features">
+                        <li>Search engine optimization</li>
+                        <li>Google Ads management</li>
+                        <li>Social media marketing</li>
+                        <li>Content marketing</li>
+                        <li>Analytics & reporting</li>
+                    </ul>
+                    <div class="service-price">Starting at $1,500/month</div>
+                    <button class="service-btn" onclick="contactUs('Digital Marketing')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Solutions & Hosting</h3>
+                    <p>Ensure your digital assets are secure, scalable, and always accessible with our cloud infrastructure and hosting services.</p>
+                    <ul class="service-features">
+                        <li>Cloud migration services</li>
+                        <li>Managed hosting solutions</li>
+                        <li>Backup & disaster recovery</li>
+                        <li>Security monitoring</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                    <div class="service-price">Starting at $200/month</div>
+                    <button class="service-btn" onclick="contactUs('Cloud Solutions')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎥</div>
+                    <h3>Video Production & Animation</h3>
+                    <p>Tell your story through compelling video content and animations that engage audiences and communicate your message effectively.</p>
+                    <ul class="service-features">
+                        <li>Promotional videos</li>
+                        <li>2D/3D animations</li>
+                        <li>Explainer videos</li>
+                        <li>Motion graphics</li>
+                        <li>Video editing & post-production</li>
+                    </ul>
+                    <div class="service-price">Starting at $2,000</div>
+                    <button class="service-btn" onclick="contactUs('Video Production')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>Website Maintenance & Support</h3>
+                    <p>Keep your website running smoothly with regular updates, security monitoring, and technical support services.</p>
+                    <ul class="service-features">
+                        <li>Regular security updates</li>
+                        <li>Content updates</li>
+                        <li>Performance monitoring</li>
+                        <li>Technical support</li>
+                        <li>Backup management</li>
+                    </ul>
+                    <div class="service-price">Starting at $150/month</div>
+                    <button class="service-btn" onclick="contactUs('Maintenance')">Get Started</button>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📈</div>
+                    <h3>Business Consulting & Strategy</h3>
+                    <p>Get expert guidance on digital transformation, technology adoption, and strategic planning to grow your business.</p>
+                    <ul class="service-features">
+                        <li>Digital transformation strategy</li>
+                        <li>Technology consulting</li>
+                        <li>Process optimization</li>
+                        <li>Market analysis</li>
+                        <li>Growth strategy planning</li>
+                    </ul>
+                    <div class="service-price">Starting at $150/hour</div>
+                    <button class="service-btn" onclick="contactUs('Consulting')">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Process</h2>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="process-number">1</div>
+                    <h3>Discovery & Strategy</h3>
+                    <p>We start by understanding your business goals, target audience, and project requirements through detailed consultation.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>Our team creates wireframes, mockups, and detailed project plans that align with your vision and objectives.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">3</div>
+                    <h3>Development & Testing</h3>
+                    <p>We bring your project to life using the latest technologies while ensuring quality through rigorous testing.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-number">4</div>
+                    <h3>Launch & Support</h3>
+                    <p>We deploy your solution and provide ongoing support to ensure optimal performance and continued success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Recent Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image">🏪</div>
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Complete online store solution with custom design and advanced features for a fashion retailer.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">E-Commerce</span>
+                            <span class="portfolio-tag">UI/UX</span>
+                            <span class="portfolio-tag">Backend</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image">🏢</div>
+                    <div class="portfolio-content">
+                        <h3>Corporate Website</h3>
+                        <p>Professional website redesign for a consulting firm with focus on user experience and lead generation.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Web Design</span>
+                            <span class="portfolio-tag">SEO</span>
+                            <span class="portfolio-tag">CMS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image">📱</div>
+                    <div class="portfolio-content">
+                        <h3>Mobile App</h3>
+                        <p>iOS and Android app for a fitness startup with social features and workout tracking capabilities.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Mobile App</span>
+                            <span class="portfolio-tag">React Native</span>
+                            <span class="portfolio-tag">API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how we can help bring your vision to life with our comprehensive digital solutions.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn primary" onclick="contactUs('General')">Get Free Consultation</a>
+                <a href="#" class="cta-btn secondary" onclick="viewPortfolio()">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact function
+        function contactUs(service) {
+            alert(`Thank you for your interest in our ${service} services! Please contact us at:\n\nEmail: hello@digitalcraft.com\nPhone: (555) 123-4567\n\nWe'll get back to you within 24 hours with a detailed proposal.`);
+        }
+
+        // Portfolio function
+        function viewPortfolio() {
+            alert('Our complete portfolio showcases over 500 successful projects across various industries. Contact us to schedule a detailed presentation of our work.');
+        }
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Animate numbers in hero stats
+        function animateNumbers() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent.replace('+', ''));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target + (stat.textContent.includes('+') ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                    }
+                }, 50);
+            });
+        }
+
+        // Start number animation when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(animateNumbers, 1000);
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

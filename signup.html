@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Designers.io</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Google API client -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Join our creative community</p>
+            </div>
+            
+            <!-- Google Sign-In Button -->
+            <div id="g_id_onload"
+                 data-client_id="67480779251-g65fvsk55f7p630vg1qse1j1dtku6av2.apps.googleusercontent.com "
+                 data-context="signup"
+                 data-ux_mode="popup"
+                 data-login_uri="http://127.0.01:5500:/auth/google/callback"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="continue_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
+
+            <div class="auth-divider">or</div>
+            
+            <!-- Email Signup Form -->
+            <form id="signup-form">
+                <div class="form-group">
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                </div>
+                
+                <button type="submit" class="auth-button">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

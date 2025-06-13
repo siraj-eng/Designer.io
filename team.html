@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #f7931e;
+            --accent-color: #ffd23f;
+            --dark-bg: #1a1a1a;
+            --light-bg: #fafafa;
+            --text-dark: #2c2c2c;
+            --text-light: #ffffff;
+            --transition: all 0.3s ease;
+            --warm-overlay: rgba(255, 107, 53, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-photo::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Leadership Section */
+        .leadership-section {
+            background: var(--warm-overlay);
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .leadership-member {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .leadership-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .leadership-info h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .leadership-info .role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .leadership-info p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Culture Section */
+        .culture-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .culture-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 30px;
+        }
+
+        .footer-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-member {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">YourCompany</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Meet Our Team</h1>
+                <p>Passionate professionals driving innovation and excellence in everything we do</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Leadership Team</h2>
+                <p>Visionary leaders guiding our company toward success</p>
+            </div>
+            <div class="leadership-grid">
+                <div class="leadership-member">
+                    <div class="leadership-photo">SM</div>
+                    <div class="leadership-info">
+                        <h3>Sarah Mitchell</h3>
+                        <div class="role">Chief Executive Officer</div>
+                        <p>With over 15 years of industry experience, Sarah leads our company with vision and strategic thinking, driving growth and innovation across all departments.</p>
+                    </div>
+                </div>
+                <div class="leadership-member">
+                    <div class="leadership-photo">MJ</div>
+                    <div class="leadership-info">
+                        <h3>Michael Johnson</h3>
+                        <div class="role">Chief Technology Officer</div>
+                        <p>Michael spearheads our technical initiatives and product development, ensuring we stay at the forefront of technological advancement.</p>
+                    </div>
+                </div>
+                <div class="leadership-member">
+                    <div class="leadership-photo">LC</div>
+                    <div class="leadership-info">
+                        <h3>Lisa Chen</h3>
+                        <div class="role">Chief Operations Officer</div>
+                        <p>Lisa oversees our day-to-day operations and ensures seamless execution of our strategic initiatives across all business units.</p>
+                    </div>
+                </div>
+                <div class="leadership-member">
+                    <div class="leadership-photo">DR</div>
+                    <div class="leadership-info">
+                        <h3>David Rodriguez</h3>
+                        <div class="role">Chief Financial Officer</div>
+                        <p>David manages our financial strategy and operations, ensuring sustainable growth and sound fiscal management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Amazing Team</h2>
+                <p>Meet the talented individuals who make our success possible</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">AK</div>
+                    <div class="member-name">Alex Kim</div>
+                    <div class="member-role">Senior Software Engineer</div>
+                    <div class="member-bio">Alex specializes in full-stack development and has been instrumental in building our core platform architecture.</div>
+                    <div class="member-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                        <a href="#" class="social-link">🐦</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">EP</div>
+                    <div class="member-name">Emma Parker</div>
+                    <div class="member-role">UX/UI Designer</div>
+                    <div class="member-bio">Emma creates beautiful and intuitive user experiences that delight our customers and drive engagement.</div>
+                    <div class="member-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                        <a href="#" class="social-link">🎨</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">JD</div>
+                    <div class="member-name">James Davis</div>
+                    <div class="member-role">Product Manager</div>
+                    <div class="member-bio">James leads product strategy and development, ensuring our solutions meet market needs and exceed expectations.</div>
+                    <div class="member-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                        <a href="#" class="social-link">📱</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">RT</div>
+                    <div class="member-name">Rachel Thompson</div>
+                    <div class="member-role">Marketing Director</div>
+                    <div class="member-bio">Rachel drives our brand strategy and customer acquisition through innovative marketing campaigns and partnerships.</div>
+                    <div class="member-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                        <a href="#" class="social-link">📈</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">CS</div>
+                    <div class="member-name">Carlos Silva</div>
+                    <div class="member-role">Data Scientist</div>
+                    <div class="member-bio">Carlos analyzes complex datasets to derive actionable insights that inform our business decisions and strategy.</div>
+                    <div class="member-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                        <a href="#" class="social-link">📊</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">NW</div>
+                    <div class="member-name">Nina Williams</div>
+                    <div class="member-role">Customer Success Manager</div>
+                    <div class="member-bio">Nina ensures our customers achieve their goals and have exceptional experiences throughout their journey with us.</div>
+                    <div class="member-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                        <a href="#" class="social-link">💬</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="culture-values">
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries and embrace new technologies to create groundbreaking solutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>We believe great things happen when diverse minds work together toward common goals.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest quality in everything we deliver, exceeding expectations every time.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Growth</h3>
+                    <p>We foster continuous learning and development for both our team and our business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Join Our Team</h3>
+                <p>Ready to be part of something amazing? Check out our careers page!</p>
+            </div>
+            <div class="footer-links">
+                <a href="career.html">Careers</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy</a>
+            </div>
+            <p>&copy; 2025 Designers.io . All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
