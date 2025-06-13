@@ -1,14 +1,15 @@
 const express = require('express');
 const { OAuth2Client } = require('google-auth-library');
 const session = require('express-session');
+require('dotenv').config(); // <- Use .env file
 
 const app = express();
-const client = new OAuth2Client('67480779251-g65fvsk55f7p630vg1qse1j1dtku6av2.apps.googleusercontent.com client.id');
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // Middleware
 app.use(express.json());
 app.use(session({
-    secret: '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 secret id',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true
 }));
@@ -17,13 +18,12 @@ app.use(session({
 app.post('/auth/google/callback', async (req, res) => {
     try {
         const { token } = req.body;
-        
-        // Verify the Google token
+
         const ticket = await client.verifyIdToken({
             idToken: token,
-            audience: '67480779251-g65fvsk55f7p630vg1qse1j1dtku6av2.apps.googleusercontent.com client.id'
+            audience: process.env.GOOGLE_CLIENT_ID
         });
-        
+
         const payload = ticket.getPayload();
         const user = {
             id: payload.sub,
@@ -31,11 +31,9 @@ app.post('/auth/google/callback', async (req, res) => {
             email: payload.email,
             avatar: payload.picture
         };
-        
-        // Store user in session
+
         req.session.user = user;
-        
-        // Return user data to frontend
+
         res.json({ success: true, user });
     } catch (error) {
         console.error('Google auth error:', error);

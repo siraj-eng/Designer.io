@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team</title>
+    <title>Our Team - Creative Design Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Questrial&family=Montserrat:wght@300;400;600;700&display=swap');
+
         :root {
-            --primary-color: #ff6b35;
-            --secondary-color: #f7931e;
-            --accent-color: #ffd23f;
+            --primary-color: #FF8C42; /* Warm orange */
+            --secondary-color: #FFB347; /* Softer complementary orange */
+            --accent-color: #FFD166; /* Golden yellow accent */
             --dark-bg: #1a1a1a;
             --light-bg: #fafafa;
             --text-dark: #2c2c2c;
             --text-light: #ffffff;
             --transition: all 0.3s ease;
-            --warm-overlay: rgba(255, 107, 53, 0.1);
+            --warm-overlay: rgba(255, 140, 66, 0.1);
             --glass-bg: rgba(255, 255, 255, 0.1);
         }
 
@@ -96,7 +99,10 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
             color: var(--text-light);
             padding: 150px 0 100px;
             text-align: center;
@@ -222,7 +228,7 @@
 
         .team-member:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(255, 140, 66, 0.2);
         }
 
         .member-photo {
@@ -234,7 +240,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: white;
             font-weight: 700;
             position: relative;
@@ -326,6 +332,12 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .leadership-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 140, 66, 0.2);
         }
 
         .leadership-photo {
@@ -383,7 +395,7 @@
 
         .value-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 30px rgba(255, 140, 66, 0.2);
         }
 
         .value-icon {
@@ -475,12 +487,12 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">YourCompany</div>
+            <div class="logo">Designers.io</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="../../index.html">Home</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#careers">Careers</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="../../index.html#studio/">Studio</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -515,8 +527,8 @@
                     <div class="leadership-photo">MJ</div>
                     <div class="leadership-info">
                         <h3>Michael Johnson</h3>
-                        <div class="role">Chief Technology Officer</div>
-                        <p>Michael spearheads our technical initiatives and product development, ensuring we stay at the forefront of technological advancement.</p>
+                        <div class="role">Chief Creative Officer</div>
+                        <p>Michael spearheads our creative vision and design direction, ensuring we stay at the forefront of design innovation.</p>
                     </div>
                 </div>
                 <div class="leadership-member">
@@ -531,8 +543,8 @@
                     <div class="leadership-photo">DR</div>
                     <div class="leadership-info">
                         <h3>David Rodriguez</h3>
-                        <div class="role">Chief Financial Officer</div>
-                        <p>David manages our financial strategy and operations, ensuring sustainable growth and sound fiscal management.</p>
+                        <div class="role">Chief Technology Officer</div>
+                        <p>David manages our technical strategy and development, ensuring we deliver cutting-edge digital solutions.</p>
                     </div>
                 </div>
             </div>
@@ -543,19 +555,19 @@
     <section class="team-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Amazing Team</h2>
-                <p>Meet the talented individuals who make our success possible</p>
+                <h2>Our Creative Team</h2>
+                <p>Meet the talented individuals who bring our designs to life</p>
             </div>
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-photo">AK</div>
                     <div class="member-name">Alex Kim</div>
-                    <div class="member-role">Senior Software Engineer</div>
-                    <div class="member-bio">Alex specializes in full-stack development and has been instrumental in building our core platform architecture.</div>
+                    <div class="member-role">Senior Designer</div>
+                    <div class="member-bio">Alex specializes in branding and visual identity, creating memorable designs that resonate with audiences.</div>
                     <div class="member-social">
-                        <a href="#" class="social-link">🔗</a>
-                        <a href="#" class="social-link">📧</a>
-                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
                     </div>
                 </div>
 
@@ -563,59 +575,59 @@
                     <div class="member-photo">EP</div>
                     <div class="member-name">Emma Parker</div>
                     <div class="member-role">UX/UI Designer</div>
-                    <div class="member-bio">Emma creates beautiful and intuitive user experiences that delight our customers and drive engagement.</div>
+                    <div class="member-bio">Emma creates beautiful and intuitive user experiences that delight our clients and drive engagement.</div>
                     <div class="member-social">
-                        <a href="#" class="social-link">🔗</a>
-                        <a href="#" class="social-link">📧</a>
-                        <a href="#" class="social-link">🎨</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
                     </div>
                 </div>
 
                 <div class="team-member">
                     <div class="member-photo">JD</div>
                     <div class="member-name">James Davis</div>
-                    <div class="member-role">Product Manager</div>
-                    <div class="member-bio">James leads product strategy and development, ensuring our solutions meet market needs and exceed expectations.</div>
+                    <div class="member-role">Art Director</div>
+                    <div class="member-bio">James leads our creative team, ensuring all projects maintain the highest standards of visual excellence.</div>
                     <div class="member-social">
-                        <a href="#" class="social-link">🔗</a>
-                        <a href="#" class="social-link">📧</a>
-                        <a href="#" class="social-link">📱</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="team-member">
                     <div class="member-photo">RT</div>
                     <div class="member-name">Rachel Thompson</div>
-                    <div class="member-role">Marketing Director</div>
-                    <div class="member-bio">Rachel drives our brand strategy and customer acquisition through innovative marketing campaigns and partnerships.</div>
+                    <div class="member-role">Motion Designer</div>
+                    <div class="member-bio">Rachel brings our designs to life with captivating animations and dynamic motion graphics.</div>
                     <div class="member-social">
-                        <a href="#" class="social-link">🔗</a>
-                        <a href="#" class="social-link">📧</a>
-                        <a href="#" class="social-link">📈</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vimeo"></i></a>
                     </div>
                 </div>
 
                 <div class="team-member">
                     <div class="member-photo">CS</div>
                     <div class="member-name">Carlos Silva</div>
-                    <div class="member-role">Data Scientist</div>
-                    <div class="member-bio">Carlos analyzes complex datasets to derive actionable insights that inform our business decisions and strategy.</div>
+                    <div class="member-role">Frontend Developer</div>
+                    <div class="member-bio">Carlos transforms our designs into functional, responsive websites with clean, efficient code.</div>
                     <div class="member-social">
-                        <a href="#" class="social-link">🔗</a>
-                        <a href="#" class="social-link">📧</a>
-                        <a href="#" class="social-link">📊</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
 
                 <div class="team-member">
                     <div class="member-photo">NW</div>
                     <div class="member-name">Nina Williams</div>
-                    <div class="member-role">Customer Success Manager</div>
-                    <div class="member-bio">Nina ensures our customers achieve their goals and have exceptional experiences throughout their journey with us.</div>
+                    <div class="member-role">Client Relations</div>
+                    <div class="member-bio">Nina ensures our clients have exceptional experiences throughout their creative journey with us.</div>
                     <div class="member-social">
-                        <a href="#" class="social-link">🔗</a>
-                        <a href="#" class="social-link">📧</a>
-                        <a href="#" class="social-link">💬</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-comment"></i></a>
                     </div>
                 </div>
             </div>
@@ -627,28 +639,28 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Values</h2>
-                <p>The principles that guide everything we do</p>
+                <p>The principles that guide everything we create</p>
             </div>
             <div class="culture-values">
                 <div class="value-card">
-                    <div class="value-icon">🚀</div>
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
                     <h3>Innovation</h3>
-                    <p>We constantly push boundaries and embrace new technologies to create groundbreaking solutions.</p>
+                    <p>We constantly push boundaries and embrace new ideas to create groundbreaking designs.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">🤝</div>
+                    <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
                     <h3>Collaboration</h3>
-                    <p>We believe great things happen when diverse minds work together toward common goals.</p>
+                    <p>We believe great designs happen when diverse minds work together toward common goals.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">⭐</div>
+                    <div class="value-icon"><i class="fas fa-award"></i></div>
                     <h3>Excellence</h3>
                     <p>We strive for the highest quality in everything we deliver, exceeding expectations every time.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">🌱</div>
+                    <div class="value-icon"><i class="fas fa-seedling"></i></div>
                     <h3>Growth</h3>
-                    <p>We foster continuous learning and development for both our team and our business.</p>
+                    <p>We foster continuous learning and development for both our team and our creative process.</p>
                 </div>
             </div>
         </div>
@@ -658,16 +670,15 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3>Join Our Team</h3>
-                <p>Ready to be part of something amazing? Check out our careers page!</p>
+                <h3>Want to Join Our Team?</h3>
+                <p>We're always looking for talented creatives to join our growing studio.</p>
             </div>
             <div class="footer-links">
-                <a href="career.html">Careers</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-                <a href="#privacy">Privacy</a>
+                <a href="/career.html">Careers</a>
+                <a href="../../index.html#contact">Contact</a>
+                <a href="../../index.html#about/">About Us</a>
             </div>
-            <p>&copy; 2025 Designers.io . All rights reserved.</p>
+            <p>&copy; 2025 Designers.io. All rights reserved.</p>
         </div>
     </footer>
 </body>
