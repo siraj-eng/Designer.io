@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Google Auth
     window.onGoogleAuthLoad = function() {
         google.accounts.id.initialize({
-            client_id: '67480779251-g65fvsk55f7p630vg1qse1j1dtku6av2.apps.googleusercontent',
+            client_id: '67480779251-g65fvsk55f7p630vg1qse1j1dtku6av2.apps.googleusercontent.com',
             callback: handleGoogleAuth
         });
     };
